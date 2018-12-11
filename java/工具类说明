@@ -1,0 +1,7 @@
+ThreadLocal类:
+    
+    1.提供了get，set，remove，initValue 方法
+    2.一个ThreadLocal的实例在一个线程中最多只能存储一个对象
+    3.内部实现原理为先找到当前线程的threadlocals属性，该属性是一个类似于map的容器，其中存储的键为弱引用的ThreadLocal对象，采用开放地址检测法来避免hash冲突
+    4.该类使用可能产生内存泄漏问题，具体表现为如果ThreadLocal的实例不存在其他强引用，在垃圾回收之后Thread的threadlocals中可能存在一个(null,value)的Entry不能回收
+    避免措施为使用结束后调用ThreadLocal.remove()移除

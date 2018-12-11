@@ -1,0 +1,4 @@
+动态代理的两种实现方式如下:
+    1. jdk基于接口实现的动态代理 通过实现InnovationHandler接口的拦截器的invoke 方法中实现切面代码的植入，通过Proxy.newInstance 方法返回代理对象
+    代理对象实际上是通过操作字节码根据接口定义的规则生成的一个java类，在这个类中有被代理方法的Method对象实例，通过调用InnovationHandler的invoke方法实现实现
+    2. cglib实现 通过字节码操作框架ASM生成基类对应的子类的字节码，在子类中通过调用拦截器的方法来实现动态代理 同时采用FastClass来减少反射带来的性能损耗
