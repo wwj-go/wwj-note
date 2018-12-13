@@ -1,0 +1,14 @@
+
+1.使用jQuery的$(function(){});
+2.使用jquery的$(document).ready(function(){});
+前两者本质上没有区别，第1种是第2种的简写方式。两个是document加载完成后就执行
+
+3.使用jQuery的$(window).load(function(){});
+4.使用window.onload = function(){}
+第3种和第4种都是等到整个window加载完成执行,两者也没有区别，只是一个使用dom对象，一个使用jQuery对象
+
+5.在标签上静态绑定onload事件，<body onload="function1()">等待body加载完成，就会执行function1()方法
+
+执行时间排序 1 = 2 > 3 = 4 > 5
+
+相等的执行顺序和脚本加载顺序一致
